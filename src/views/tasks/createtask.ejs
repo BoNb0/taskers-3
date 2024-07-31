@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create | Tasks</title>
+  </head>
+  <body>
+    <h1>Create a task</h1>
+    <h2><a href="/api/tasks">All tasks</a></h2>
+    <form action="/api/createtask" method="post">
+      <label>Task Title</label>
+      <input type="text" name="title" />
+      <br /><br />
+      <label>Body</label>
+      <br />
+      <textarea name="body" rows="4" cols="50"></textarea>
+      <br /><br />
+      <label>Important</label>
+      <input type="checkbox" name="isImportant" id="isImportant" value="true" />
+      <br /><br />
+      <label>Completed</label>
+      <input type="checkbox" name="isCompleted" id="isCompleted" value="true" />
+      <br /><br />
+      <button>Add task</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/header.ejs') %>
+  <body>
+    <%- include('../partials/nav.ejs') %>
+    <h3>Login</h3>
+    <form action="/api/auth/login" method="post">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button>login</button>
+    </form>
+
+    <nav>
+      <a href="/"></a>
+      <a href="/about"></a>
+      <a href="/api/signup">Create a new account</a>
+    </nav>
+    <br />
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>
