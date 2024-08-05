@@ -9,5 +9,26 @@
     <h3><a href="/api/tasks">All tasks</a></h3>
     <h2><%=task.title%></h2>
     <p><%=task.body%></p>
+    <br>
+    
+      <a class="delete" data-doc="<%= task.id %>" href="/api/tasks">X</a>
+    
+    <script>
+      const del = document.querySelector("a.delete");
+      
+      del.addEventListener("click", (e) => {
+        console.log(del.dataset.doc)
+        const endPoint = `/api/tasks/${del.dataset.doc}`
+        fetch(endPoint, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .catch((error) => {
+            console.log(error);
+          });
+      });
+      
+
+    </script>
   </body>
 </html>
