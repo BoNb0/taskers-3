@@ -19,13 +19,14 @@
       del.addEventListener("click", (e) => {
         console.log(del.dataset.doc)
         const endPoint = `/api/tasks/${del.dataset.doc}`
-        fetch(endPoint, {
+         fetch( endPoint, {
           method: "DELETE",
-        })
+        }) 
           .then((response) => response.json())
           .catch((error) => {
             console.log(error);
           });
+          alert("Task Succesfully deleted")
       });
       
 

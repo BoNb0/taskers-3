@@ -10,11 +10,11 @@
     <h2><a href="/api/tasks">All tasks</a></h2>
     <form action="/api/createtask" method="post">
       <label>Task Title</label>
-      <input type="text" name="title" />
+      <input type="text" name="title" required />
       <br /><br />
       <label>Body</label>
       <br />
-      <textarea name="body" rows="4" cols="50"></textarea>
+      <textarea name="body" rows="4" cols="50" required></textarea>
       <br /><br />
       <label>Important</label>
       <input type="checkbox" name="isImportant" id="isImportant" value="true" />
@@ -22,7 +22,22 @@
       <label>Completed</label>
       <input type="checkbox" name="isCompleted" id="isCompleted" value="true" />
       <br /><br />
-      <button>Add task</button>
+      <button id="addBtn">Add task</button>
     </form>
   </body>
+
+  <script>
+    const addBtn = document.getElementById("addBtn")
+     
+    addBtn.addEventListener("click", (e) => {
+      const endPoint = "/api/createtask";
+      fetch( endPoint, 
+      {method : "POST",})
+      .then((response) => response.json())
+      .catch((error) => {
+        console.log(error)
+      });
+      alert("Task has been succesfully added")
+    })
+  </script>
 </html>
