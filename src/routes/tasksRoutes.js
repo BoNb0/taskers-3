@@ -22,7 +22,7 @@ router.post("/api/createtask", checkAuth, checkSchema(createTaskValidationSchema
 router.get("/api/tasks/:id", checkAuth, taskDetails);
 
 router.delete("/api/tasks/:id", checkAuth, deleteTask, (req, res) => {
-  res.redirect("/api/tasks");
+  
 });
 
 export default router;
